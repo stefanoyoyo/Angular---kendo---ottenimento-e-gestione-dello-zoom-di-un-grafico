@@ -18,7 +18,7 @@ export class AppComponent {
     public zoomHandler(e) {
       console.log("zoom", e.axisRanges);
 
-      const actualZoom = this.getAtualZoom(e.axisRanges.test.max, e.axisRanges.test.min); 
+      const actualZoom = this.getAtualZoom(e.axisRanges.test.min, e.axisRanges.test.max); 
       console.log(actualZoom)
       if (actualZoom > 20) {
         e.preventDefault();
@@ -26,7 +26,7 @@ export class AppComponent {
     }
 
     getAtualZoom(max, min) {
-      return max - min;
+      return -(max - min);
     }
 
     public categoryAxis: any = {
