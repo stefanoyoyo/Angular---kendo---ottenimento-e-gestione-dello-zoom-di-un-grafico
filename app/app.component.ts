@@ -20,12 +20,14 @@ export class AppComponent {
 
       const actualZoom = this.getAtualZoom(e.axisRanges.test.min, e.axisRanges.test.max); 
       console.log(actualZoom)
-      if (actualZoom > 20) {
+      if (actualZoom > 10) {
         e.preventDefault();
       }
     }
 
-    getAtualZoom(max, min) {
+    getAtualZoom(max: number, min: number) {
+      if (min == null) return -1;
+      if (max == null) return -1;
       return -(max - min);
     }
 
