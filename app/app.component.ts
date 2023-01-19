@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ZoomEvent } from '@progress/kendo-angular-charts';
 import { data } from './data';
 
 @Component({
@@ -21,12 +22,12 @@ import { data } from './data';
 export class AppComponent {
     public data: any[] = data;
 
-    public zoomHandler(e) {
+    public zoomHandler(e: ZoomEvent) {
       console.log("zoom", e.axisRanges);
-
-      const actualZoom = this.getAtualZoom(e.axisRanges.test.min, e.axisRanges.test.max); 
+      const actualZoom = this.getAtualZoom(e.axisRanges.test.min as number, e.axisRanges.test.max as number); 
       console.log(actualZoom)
       if (actualZoom > 10) {
+        console.log('zoom denied')
         e.preventDefault();
       }
     }
