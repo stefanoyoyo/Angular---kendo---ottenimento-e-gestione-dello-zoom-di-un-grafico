@@ -4,7 +4,13 @@ import { data } from './data';
 @Component({
     selector: 'my-app',
     template: `
-      <kendo-chart renderAs="canvas" [pannable]="true" [zoomable]="true" [categoryAxis]="categoryAxis" [valueAxis]="valueAxis" (zoom)=zoomHandler($event)>
+      <kendo-chart 
+        renderAs="canvas" 
+        [pannable]="true" 
+        [zoomable]="true" 
+        (zoom)=zoomHandler($event)
+        [categoryAxis]="categoryAxis" 
+        [valueAxis]="valueAxis">
         <kendo-chart-series>
           <kendo-chart-series-item [data]="data" field="value" categoryField="category">
           </kendo-chart-series-item>
