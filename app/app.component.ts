@@ -39,7 +39,7 @@ export class AppComponent {
     }
 
     public categoryAxis: any = {
-        min: 0,
+        min: 5,
         max: 10,
         name: "test"
     };
