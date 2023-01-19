@@ -12,3 +12,6 @@ ESMEPIO:
 In questo modo mostro massimo 10 elementi (da x= 0 a x=10)
 ATTENZIONE: min e maz definiscono solo il il livello iniziale di zoom. 
 Se l'utente poi esegue zoom, quei valori cambiano.
+DUNQUE: per far ein modo che i grafico parta con un certo zoom su 
+una definita porzione del grafico, bisogna impostare 
+chart.categoryAxis.min e chart.categoryAxis.max
