@@ -39,9 +39,14 @@ export class AppComponent {
     }
 
     public categoryAxis: any = {
-        min: 5,
+        min: 0,
         max: 10,
-        name: "test"
+        name: "test",
+        labels: {
+          step: 2,
+          visible: true // visible ogni valore dell'asse
+        }
+        // visible: true // visible asse
     };
 
     public valueAxis: any = {
