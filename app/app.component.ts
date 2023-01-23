@@ -12,6 +12,15 @@ import { data } from './data';
         (zoom)=zoomHandler($event)
         [categoryAxis]="categoryAxis" 
         [valueAxis]="valueAxis">
+
+  
+        <kendo-chart-category-axis>
+          <kendo-chart-category-axis-item [categories]="categories">
+            <kendo-chart-category-axis-item-labels color="#ff00ff" [step]="xAxisLabelsSteps">
+            </kendo-chart-category-axis-item-labels>
+          </kendo-chart-category-axis-item>
+        </kendo-chart-category-axis>
+
         <kendo-chart-series>
           <kendo-chart-series-item [data]="data" field="value" categoryField="category">
           </kendo-chart-series-item>
@@ -43,10 +52,12 @@ export class AppComponent {
         // max: 100,
         name: "test",
         labels: {
-          step: 10,
+          // step: 10,
         }
         // visible: true // visible asse
     };
+
+    xAxisLabelsSteps = 10;
 
     public valueAxis: any = {
         labels: {
